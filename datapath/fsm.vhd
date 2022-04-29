@@ -8,10 +8,10 @@ package FSM is
 	component machine is
 		port(
 			inp					: in std_logic_vector(3 downto 0);
-			cz						: in std_logic_vector(1 downto 0);
-			reset,clock, z			: in std_logic;
-			di, t1, alu		: out std_logic_vector(1 downto 0);
-			cb, ao, do, w	: out std_logic;
+			cz					: in std_logic_vector(1 downto 0);
+			reset,clock, z		: in std_logic;
+			di, t1, alu, cz_en	: out std_logic_vector(1 downto 0);
+			cb, ao, do, w		: out std_logic;
 			ir, pc				: out std_logic_vector(2 downto 0);
 			mux					: out std_logic_vector(3 downto 0);
 			rf					: out std_logic_vector(4 downto 0)
@@ -31,7 +31,7 @@ entity machine is
 			inp					: in std_logic_vector(3 downto 0);
 			cz						: in std_logic_vector(1 downto 0);
 			z, reset,clock			: in std_logic;
-			di, t1, alu		: out std_logic_vector(1 downto 0);
+			di, t1, alu, cz_en		: out std_logic_vector(1 downto 0);
 			cb, ao, do, w	: out std_logic;
 			ir, pc				: out std_logic_vector(2 downto 0);
 			mux					: out std_logic_vector(3 downto 0);
@@ -70,7 +70,7 @@ begin
 				ir<="000";
 				t1<="00";
 				rf<="00000";
-				
+				cz_en<="00";
 				pc<="000";
 				di<="00";
 				mux<="0000";
@@ -86,7 +86,7 @@ begin
 					ir<="000";
 					t1<="00";
 					rf<="00000";
-					
+					cz_en<="00";
 					pc<="001";
 					di<="00";
 					mux<="0000";
@@ -100,7 +100,7 @@ begin
 					ir<="000";
 					t1<="00";
 					rf<="00000";
-					
+					cz_en<="00";
 					pc<="001";
 					di<="00";
 					mux<="0000";
@@ -115,7 +115,7 @@ begin
 					ir<="000";
 					t1<="00";
 					rf<="00000";
-					
+					cz_en<="00";
 					pc<="001";
 					di<="00";
 					mux<="0000";
@@ -130,7 +130,7 @@ begin
 					ir<="000";
 					t1<="00";
 					rf<="00000";
-					
+					cz_en<="00";
 					pc<="001";
 					di<="00";
 					mux<="0000";
@@ -145,7 +145,7 @@ begin
 					ir<="000";
 					t1<="00";
 					rf<="00000";
-					
+					cz_en<="00";
 					pc<="001";
 					di<="00";
 					mux<="0000";
@@ -160,7 +160,7 @@ begin
 					ir<="000";
 					t1<="00";
 					rf<="00000";
-					
+					cz_en<="00";
 					pc<="001";
 					di<="00";
 					mux<="0000";
@@ -175,7 +175,7 @@ begin
 					ir<="000";
 					t1<="00";
 					rf<="00000";
-					
+					cz_en<="00";
 					pc<="001";
 					di<="00";
 					mux<="0000";
@@ -190,7 +190,7 @@ begin
 					ir<="000";
 					t1<="00";
 					rf<="00000";
-					
+					cz_en<="00";
 					pc<="001";
 					di<="00";
 					mux<="0000";
@@ -205,7 +205,7 @@ begin
 					ir<="000";
 					t1<="00";
 					rf<="00000";
-					
+					cz_en<="00";
 					pc<="001";
 					di<="00";
 					mux<="0000";
@@ -220,7 +220,7 @@ begin
 					ir<="000";
 					t1<="00";
 					rf<="00000";
-					
+					cz_en<="00";
 					pc<="001";
 					di<="00";
 					mux<="0000";
@@ -235,7 +235,7 @@ begin
 					ir<="000";
 					t1<="00";
 					rf<="00000";
-					
+					cz_en<="00";
 					pc<="001";
 					di<="00";
 					mux<="0000";
@@ -250,7 +250,7 @@ begin
 					ir<="000";
 					t1<="00";
 					rf<="00000";
-					
+					cz_en<="00";
 					pc<="001";
 					di<="00";
 					mux<="0000";
@@ -266,7 +266,7 @@ begin
 				ir<="010";
 				t1<="00";
 				rf<="00011";
-				
+				cz_en<="11";
 				pc<="011";
 				di<="00";
 				mux<="0000";
@@ -281,7 +281,7 @@ begin
 				ir<="011";
 				t1<="00";
 				rf<="00010";
-				
+				cz_en<="11";
 				pc<="000";
 				di<="00";
 				mux<="0000";
@@ -296,7 +296,7 @@ begin
 				ir<="001";
 				t1<="00";
 				rf<="00000";
-				
+				cz_en<="00";
 				pc<="011";
 				di<="00";
 				mux<="0000";
@@ -312,7 +312,7 @@ begin
 					ir<="011";
 					t1<="00";
 					rf<="00010";
-					
+					cz_en<="01";
 					pc<="011";
 					di<="00";
 					mux<="0000";
@@ -327,7 +327,7 @@ begin
 					ir<="011";
 					t1<="00";
 					rf<="00010";
-					
+					cz_en<="01";
 					pc<="011";
 					di<="00";
 					mux<="0000";
@@ -344,7 +344,7 @@ begin
 					ir<="010";
 					t1<="00";
 					rf<="00011";
-					
+					cz_en<="00";
 					pc<="000";
 					di<="00";
 					mux<="0000";
@@ -359,7 +359,7 @@ begin
 					ir<="010";
 					t1<="00";
 					rf<="00011";
-					
+					cz_en<="00";
 					pc<="000";
 					di<="00";
 					mux<="0000";
@@ -375,7 +375,7 @@ begin
 				ir<="011";
 				t1<="00";
 				rf<="00001";
-				
+				cz_en<="00";
 				pc<="000";
 				di<="00";
 				mux<="0000";
@@ -391,7 +391,7 @@ begin
 					ir<="000";
 					t1<="00";
 					rf<="00100";
-					
+					cz_en<="00";
 					pc<="100";
 					di<="00";
 					mux<="0000";
@@ -406,7 +406,7 @@ begin
 					ir<="000";
 					t1<="00";
 					rf<="00100";
-					
+					cz_en<="00";
 					pc<="100";
 					di<="00";
 					mux<="0000";
@@ -423,7 +423,7 @@ begin
 					ir<="010";
 					t1<="00";
 					rf<="00011";
-					
+					cz_en<="11";
 					pc<="000";
 					di<="00";
 					mux<="0000";
@@ -438,7 +438,7 @@ begin
 					ir<="010";
 					t1<="00";
 					rf<="00011";
-					
+					cz_en<="11";
 					pc<="000";
 					di<="00";
 					mux<="0000";
@@ -453,7 +453,7 @@ begin
 					ir<="010";
 					t1<="00";
 					rf<="00011";
-					
+					cz_en<="11";
 					pc<="000";
 					di<="00";
 					mux<="0000";
@@ -469,7 +469,7 @@ begin
 				ir<="010";
 				t1<="01";
 				rf<="00100";
-				
+				cz_en<="00";
 				pc<="000";
 				di<="00";
 				mux<="0000";
@@ -484,7 +484,7 @@ begin
 				ir<="010";
 				t1<="01";
 				rf<="01000";
-				
+				cz_en<="00";
 				pc<="000";
 				di<="00";
 				mux<="0000";
@@ -499,7 +499,7 @@ begin
 				ir<="010";
 				t1<="01";
 				rf<="00010";
-				
+				cz_en<="00";
 				pc<="000";
 				di<="00";
 				mux<="0000";
@@ -514,7 +514,7 @@ begin
 				ir<="010";
 				t1<="00";
 				rf<="00011";
-				
+				cz_en<="00";
 				pc<="000";
 				di<="00";
 				mux<="0000";
@@ -529,7 +529,7 @@ begin
 				ir<="000";
 				t1<="00";
 				rf<="00000";
-				
+				cz_en<="00";
 				pc<="011";
 				di<="00";
 				mux<="0000";
@@ -544,7 +544,7 @@ begin
 				ir<="000";
 				t1<="01";
 				rf<="00000";
-				
+				cz_en<="00";
 				pc<="010";
 				di<="00";
 				mux<="0000";
@@ -559,7 +559,7 @@ begin
 				ir<="001";
 				t1<="00";
 				rf<="00000";
-				
+				cz_en<="00";
 				pc<="100";
 				di<="00";
 				mux<="0000";
@@ -574,7 +574,7 @@ begin
 				ir<="010";
 				t1<="00";
 				rf<="00001";
-				
+				cz_en<="00";
 				pc<="010";
 				di<="00";
 				mux<="0000";
@@ -589,7 +589,7 @@ begin
 				ir<="010";
 				t1<="01";
 				rf<="10010";
-				
+				cz_en<="00";
 				pc<="000";
 				di<="00";
 				mux<="0011";
@@ -604,7 +604,7 @@ begin
 				ir<="010";
 				t1<="01";
 				rf<="10010";
-				
+				cz_en<="00";
 				pc<="000";
 				di<="00";
 				mux<="0101";
@@ -619,7 +619,7 @@ begin
 				ir<="010";
 				t1<="01";
 				rf<="10010";
-				
+				cz_en<="00";
 				pc<="000";
 				di<="00";
 				mux<="1001";

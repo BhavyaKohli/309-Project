@@ -12,7 +12,7 @@ entity int_bus is
 end int_bus;
 
 architecture bus_arch of int_bus is
-variable pad : std_logic_vector(15-data_length downto 0) := (others => '0');
+signal pad : std_logic_vector(15-data_length downto 0) := (others => '0');
 begin
 	process (clk, rst)
 	begin

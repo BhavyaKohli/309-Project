@@ -21,15 +21,22 @@ type rf is array(7 downto 0) of std_logic_vector(15 downto 0);
 signal reg : rf;
 
 begin
-	rf_d1 <= reg(to_integer(unsigned(rf_a1)));
-	rf_d2 <= reg(to_integer(unsigned(rf_a2)));
 
 	process(clk, rst)
 	begin
 		if(rst = '1') then
 			reg <= (others => (others => '0'));
 		else    
-			if(clk'event and clk = '1') then
+			if(clk'event and clk = '1') then	
+				if (rf_a1 = "000") then
+					null;
+				elsif (rf_a2 = "000") then
+					null;
+				else 
+					rf_d1 <= reg(to_integer(unsigned(rf_a1)));
+					rf_d2 <= reg(to_integer(unsigned(rf_a2)));
+				end if;
+
 				if (wr_en = '1') then
 					reg (to_integer(unsigned(rf_a3))) <= rf_d3;
 				end if;

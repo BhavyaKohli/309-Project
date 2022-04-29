@@ -5,7 +5,7 @@ use ieee.numeric_std.all;
 entity mem is
 	generic (
 		mem_data_width : integer := 16; -- number of bits per word
-		mem_width : integer := 8 -- number of address bits; N = 2^A
+		mem_width : integer := 16 -- number of address bits; N = 2^A
 	); 
 	
 	port (

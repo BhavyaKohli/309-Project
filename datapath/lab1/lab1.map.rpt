@@ -1,5 +1,5 @@
 Analysis & Synthesis report for lab1
-Thu Apr 28 14:39:30 2022
+Fri Apr 29 21:36:38 2022
 Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
 
 
@@ -10,7 +10,56 @@ Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: int_bus:bus_a
+ 10. Parameter Settings for User Entity Instance: int_bus:bus_b
+ 11. Parameter Settings for User Entity Instance: reg:program_counter
+ 12. Parameter Settings for User Entity Instance: switch:sw_pci
+ 13. Parameter Settings for User Entity Instance: mux_2to1:bus_inc_mux
+ 14. Parameter Settings for User Entity Instance: reg:instruction_reg
+ 15. Parameter Settings for User Entity Instance: switch:buses_rfa3_sw_1
+ 16. Parameter Settings for User Entity Instance: switch:buses_rfa3_sw_c
+ 17. Parameter Settings for User Entity Instance: switch:buses_rfa3_sw_z
+ 18. Parameter Settings for User Entity Instance: mux_2to1:buses_rfa3
+ 19. Parameter Settings for User Entity Instance: mux_2to1:rf_a1_selection_mux1
+ 20. Parameter Settings for User Entity Instance: mux_2to1:rf_a2_selection_mux2
+ 21. Parameter Settings for User Entity Instance: mux_4to1:rf_a3_selection_mux1
+ 22. Parameter Settings for User Entity Instance: mux_4to1:rf_a3_selection_mux2
+ 23. Parameter Settings for User Entity Instance: switch:sw1_rfa1
+ 24. Parameter Settings for User Entity Instance: switch:sw2_rfa3
+ 25. Parameter Settings for User Entity Instance: switch:rf_switch_1
+ 26. Parameter Settings for User Entity Instance: switch:rf_switch_2
+ 27. Parameter Settings for User Entity Instance: switch:rf_switch_3
+ 28. Parameter Settings for User Entity Instance: switch:rf_switch_4
+ 29. Parameter Settings for User Entity Instance: ALU:arithmetic_logical_unit
+ 30. Parameter Settings for User Entity Instance: switch:bus_a_alu
+ 31. Parameter Settings for User Entity Instance: switch:bus_b_alu
+ 32. Parameter Settings for User Entity Instance: reg:temp_reg_t1
+ 33. Parameter Settings for User Entity Instance: switch:t1_bus_a
+ 34. Parameter Settings for User Entity Instance: switch:t1_bus_b
+ 35. Parameter Settings for User Entity Instance: reg:carry_reg
+ 36. Parameter Settings for User Entity Instance: reg:zero_reg
+ 37. Parameter Settings for User Entity Instance: reg:address_out
+ 38. Parameter Settings for User Entity Instance: switch:di_switch_1
+ 39. Parameter Settings for User Entity Instance: switch:di_switch_2
+ 40. Parameter Settings for User Entity Instance: reg:data_in
+ 41. Parameter Settings for User Entity Instance: reg:data_out
+ 42. Parameter Settings for User Entity Instance: mem:data_memory
+ 43. Parameter Settings for User Entity Instance: mem:instruction_memory
+ 44. Port Connectivity Checks: "mem:instruction_memory"
+ 45. Port Connectivity Checks: "reg:temp_reg_t1"
+ 46. Port Connectivity Checks: "mux_4to1:rf_a3_selection_mux2"
+ 47. Port Connectivity Checks: "mux_4to1:rf_a3_selection_mux1"
+ 48. Port Connectivity Checks: "mux_2to1:rf_a2_selection_mux2"
+ 49. Port Connectivity Checks: "mux_2to1:rf_a1_selection_mux1"
+ 50. Port Connectivity Checks: "R_block:rblock"
+ 51. Port Connectivity Checks: "switch:buses_rfa3_sw_1"
+ 52. Port Connectivity Checks: "reg:instruction_reg"
+ 53. Port Connectivity Checks: "incrementer:incr"
+ 54. Analysis & Synthesis Messages
 
 
 
@@ -37,11 +86,15 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                              ;
 +-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Thu Apr 28 14:39:30 2022           ;
+; Analysis & Synthesis Status ; Successful - Fri Apr 29 21:36:38 2022       ;
 ; Quartus Prime Version       ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
 ; Revision Name               ; lab1                                        ;
-; Top-level Entity Name       ; datapath                                    ;
+; Top-level Entity Name       ; Datapath                                    ;
 ; Family                      ; MAX V                                       ;
+; Total logic elements        ; 0                                           ;
+; Total pins                  ; 46                                          ;
+; Total virtual pins          ; 0                                           ;
+; UFM blocks                  ; 0 / 1 ( 0 % )                               ;
 +-----------------------------+---------------------------------------------+
 
 
@@ -131,13 +184,530 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                      ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+; ../rij.vhd                       ; yes             ; User VHDL File  ; C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/rij.vhd         ;         ;
+; ../regfile.vhd                   ; yes             ; User VHDL File  ; C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/regfile.vhd     ;         ;
+; ../reg.vhd                       ; yes             ; User VHDL File  ; C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/reg.vhd         ;         ;
+; ../muxes.vhd                     ; yes             ; User VHDL File  ; C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/muxes.vhd       ;         ;
+; ../memory.vhd                    ; yes             ; User VHDL File  ; C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/memory.vhd      ;         ;
+; ../incrementer.vhd               ; yes             ; User VHDL File  ; C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/incrementer.vhd ;         ;
+; ../datapath.vhd                  ; yes             ; User VHDL File  ; C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd    ;         ;
+; ../bus.vhd                       ; yes             ; User VHDL File  ; C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/bus.vhd         ;         ;
+; ../alu.vhd                       ; yes             ; User VHDL File  ; C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/alu.vhd         ;         ;
++----------------------------------+-----------------+-----------------+----------------------------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Total logic elements                        ; 0     ;
+;     -- Combinational with no register       ; 0     ;
+;     -- Register only                        ; 0     ;
+;     -- Combinational with a register        ; 0     ;
+;                                             ;       ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 0     ;
+;     -- 3 input functions                    ; 0     ;
+;     -- 2 input functions                    ; 0     ;
+;     -- 1 input functions                    ; 0     ;
+;     -- 0 input functions                    ; 0     ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 0     ;
+;     -- arithmetic mode                      ; 0     ;
+;     -- qfbk mode                            ; 0     ;
+;     -- register cascade mode                ; 0     ;
+;     -- synchronous clear/load mode          ; 0     ;
+;     -- asynchronous clear/load mode         ; 0     ;
+;                                             ;       ;
+; Total registers                             ; 0     ;
+; I/O pins                                    ; 46    ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Logic Cells ; LC Registers ; UFM Blocks ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Carry Chain LCs ; Packed LCs ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+; |Datapath                  ; 0 (0)       ; 0            ; 0          ; 46   ; 0            ; 0 (0)        ; 0 (0)             ; 0 (0)            ; 0 (0)           ; 0 (0)      ; |Datapath           ; Datapath    ; work         ;
++----------------------------+-------------+--------------+------------+------+--------------+--------------+-------------------+------------------+-----------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: int_bus:bus_a ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; data_length    ; 16    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: int_bus:bus_b ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; data_length    ; 16    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg:program_counter ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; nbits          ; 16    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:sw_pci ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; nbits          ; 16    ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_2to1:bus_inc_mux ;
++----------------+-------+------------------------------------------+
+; Parameter Name ; Value ; Type                                     ;
++----------------+-------+------------------------------------------+
+; nbits          ; 16    ; Signed Integer                           ;
++----------------+-------+------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg:instruction_reg ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; nbits          ; 16    ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:buses_rfa3_sw_1 ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; nbits          ; 1     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:buses_rfa3_sw_c ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; nbits          ; 1     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:buses_rfa3_sw_z ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; nbits          ; 1     ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_2to1:buses_rfa3 ;
++----------------+-------+-----------------------------------------+
+; Parameter Name ; Value ; Type                                    ;
++----------------+-------+-----------------------------------------+
+; nbits          ; 3     ; Signed Integer                          ;
++----------------+-------+-----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_2to1:rf_a1_selection_mux1 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; nbits          ; 3     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_2to1:rf_a2_selection_mux2 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; nbits          ; 3     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_4to1:rf_a3_selection_mux1 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; nbits          ; 3     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mux_4to1:rf_a3_selection_mux2 ;
++----------------+-------+---------------------------------------------------+
+; Parameter Name ; Value ; Type                                              ;
++----------------+-------+---------------------------------------------------+
+; nbits          ; 3     ; Signed Integer                                    ;
++----------------+-------+---------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:sw1_rfa1 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; nbits          ; 3     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:sw2_rfa3 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; nbits          ; 3     ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:rf_switch_1 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; nbits          ; 16    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:rf_switch_2 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; nbits          ; 16    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:rf_switch_3 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; nbits          ; 16    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:rf_switch_4 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; nbits          ; 16    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ALU:arithmetic_logical_unit ;
++----------------+-------+-------------------------------------------------+
+; Parameter Name ; Value ; Type                                            ;
++----------------+-------+-------------------------------------------------+
+; operand_width  ; 16    ; Signed Integer                                  ;
+; sel_line       ; 2     ; Signed Integer                                  ;
++----------------+-------+-------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:bus_a_alu ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; nbits          ; 16    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:bus_b_alu ;
++----------------+-------+--------------------------------------+
+; Parameter Name ; Value ; Type                                 ;
++----------------+-------+--------------------------------------+
+; nbits          ; 16    ; Signed Integer                       ;
++----------------+-------+--------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg:temp_reg_t1 ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; nbits          ; 16    ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:t1_bus_a ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; nbits          ; 16    ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:t1_bus_b ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; nbits          ; 16    ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg:carry_reg ;
++----------------+-------+-----------------------------------+
+; Parameter Name ; Value ; Type                              ;
++----------------+-------+-----------------------------------+
+; nbits          ; 1     ; Signed Integer                    ;
++----------------+-------+-----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg:zero_reg ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; nbits          ; 1     ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg:address_out ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; nbits          ; 16    ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:di_switch_1 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; nbits          ; 16    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: switch:di_switch_2 ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; nbits          ; 16    ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg:data_in ;
++----------------+-------+---------------------------------+
+; Parameter Name ; Value ; Type                            ;
++----------------+-------+---------------------------------+
+; nbits          ; 16    ; Signed Integer                  ;
++----------------+-------+---------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------+
+; Parameter Settings for User Entity Instance: reg:data_out ;
++----------------+-------+----------------------------------+
+; Parameter Name ; Value ; Type                             ;
++----------------+-------+----------------------------------+
+; nbits          ; 16    ; Signed Integer                   ;
++----------------+-------+----------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mem:data_memory ;
++----------------+-------+-------------------------------------+
+; Parameter Name ; Value ; Type                                ;
++----------------+-------+-------------------------------------+
+; mem_data_width ; 16    ; Signed Integer                      ;
+; mem_width      ; 16    ; Signed Integer                      ;
++----------------+-------+-------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: mem:instruction_memory ;
++----------------+-------+--------------------------------------------+
+; Parameter Name ; Value ; Type                                       ;
++----------------+-------+--------------------------------------------+
+; mem_data_width ; 16    ; Signed Integer                             ;
+; mem_width      ; 16    ; Signed Integer                             ;
++----------------+-------+--------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "mem:instruction_memory" ;
++----------+-------+----------+----------------------+
+; Port     ; Type  ; Severity ; Details              ;
++----------+-------+----------+----------------------+
+; data_in  ; Input ; Info     ; Stuck at GND         ;
+; write_in ; Input ; Info     ; Stuck at GND         ;
++----------+-------+----------+----------------------+
+
+
++---------------------------------------------+
+; Port Connectivity Checks: "reg:temp_reg_t1" ;
++------+-------+----------+-------------------+
+; Port ; Type  ; Severity ; Details           ;
++------+-------+----------+-------------------+
+; en   ; Input ; Info     ; Stuck at VCC      ;
++------+-------+----------+-------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux_4to1:rf_a3_selection_mux2" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux_4to1:rf_a3_selection_mux1" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; x3   ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux_2to1:rf_a2_selection_mux2" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; x0   ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++-----------------------------------------------------------+
+; Port Connectivity Checks: "mux_2to1:rf_a1_selection_mux1" ;
++------+-------+----------+---------------------------------+
+; Port ; Type  ; Severity ; Details                         ;
++------+-------+----------+---------------------------------+
+; x1   ; Input ; Info     ; Stuck at GND                    ;
++------+-------+----------+---------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "R_block:rblock"                                                                     ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; o    ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------+
+; Port Connectivity Checks: "switch:buses_rfa3_sw_1" ;
++------+-------+----------+--------------------------+
+; Port ; Type  ; Severity ; Details                  ;
++------+-------+----------+--------------------------+
+; x    ; Input ; Info     ; Stuck at VCC             ;
++------+-------+----------+--------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "reg:instruction_reg"                                                                   ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; Port    ; Type   ; Severity ; Details                                                                             ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+; en      ; Input  ; Info     ; Stuck at VCC                                                                        ;
+; dout[2] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++---------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++----------------------------------------------+
+; Port Connectivity Checks: "incrementer:incr" ;
++------+-------+----------+--------------------+
+; Port ; Type  ; Severity ; Details            ;
++------+-------+----------+--------------------+
+; en   ; Input ; Info     ; Stuck at VCC       ;
++------+-------+----------+--------------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
-    Info: Processing started: Thu Apr 28 14:39:22 2022
+    Info: Processing started: Fri Apr 29 21:36:26 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab1 -c lab1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -186,20 +756,142 @@ Info (12021): Found 3 design units, including 1 entities, in source file /users/
     Info (12022): Found design unit 1: decode File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/decode.vhd Line: 4
     Info (12022): Found design unit 2: decoder-beh File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/decode.vhd Line: 19
     Info (12023): Found entity 1: decoder File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/decode.vhd Line: 15
-Info (12021): Found 2 design units, including 1 entities, in source file /users/bhavy/courses/ee 309/project/309-project/datapath/datapath.vhd
-    Info (12022): Found design unit 1: Datapath-datapath_arch File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 28
-    Info (12023): Found entity 1: Datapath File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 13
+Info (12021): Found 4 design units, including 2 entities, in source file /users/bhavy/courses/ee 309/project/309-project/datapath/datapath.vhd
+    Info (12022): Found design unit 1: switch-switch_arch File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 15
+    Info (12022): Found design unit 2: Datapath-datapath_arch File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 60
+    Info (12023): Found entity 1: switch File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 6
+    Info (12023): Found entity 2: Datapath File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 39
 Info (12021): Found 2 design units, including 1 entities, in source file /users/bhavy/courses/ee 309/project/309-project/datapath/bus.vhd
     Info (12022): Found design unit 1: int_bus-bus_arch File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/bus.vhd Line: 14
     Info (12023): Found entity 1: int_bus File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/bus.vhd Line: 5
 Info (12021): Found 2 design units, including 1 entities, in source file /users/bhavy/courses/ee 309/project/309-project/datapath/alu.vhd
     Info (12022): Found design unit 1: ALU-alu_arch File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/alu.vhd Line: 21
     Info (12023): Found entity 1: ALU File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/alu.vhd Line: 5
-Error (10482): VHDL error at datapath.vhd(222): object "rf_en" is used but not declared File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 222
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 1 error, 1 warning
-    Error: Peak virtual memory: 4761 megabytes
-    Error: Processing ended: Thu Apr 28 14:39:30 2022
-    Error: Elapsed time: 00:00:08
-    Error: Total CPU time (on all processors): 00:00:07
+Info (12127): Elaborating entity "datapath" for the top level hierarchy
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(47): used implicit default value for signal "co" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 47
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(48): used implicit default value for signal "zo" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 48
+Warning (10541): VHDL Signal Declaration warning at datapath.vhd(49): used implicit default value for signal "ir_data" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+Warning (10540): VHDL Signal Declaration warning at datapath.vhd(61): used explicit default value for signal "one" because signal was never assigned a value File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 61
+Warning (10540): VHDL Signal Declaration warning at datapath.vhd(62): used explicit default value for signal "zero" because signal was never assigned a value File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 62
+Warning (10540): VHDL Signal Declaration warning at datapath.vhd(63): used explicit default value for signal "zero_3bit" because signal was never assigned a value File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 63
+Warning (10540): VHDL Signal Declaration warning at datapath.vhd(64): used explicit default value for signal "dummy_16bit" because signal was never assigned a value File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 64
+Warning (10036): Verilog HDL or VHDL warning at datapath.vhd(75): object "rblock_o" assigned a value but never read File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 75
+Info (12128): Elaborating entity "int_bus" for hierarchy "int_bus:bus_a" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 213
+Warning (10445): VHDL Subtype or Type Declaration warning at bus.vhd(15): subtype or type has null range File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/bus.vhd Line: 15
+Warning (10540): VHDL Signal Declaration warning at bus.vhd(15): used explicit default value for signal "pad" because signal was never assigned a value File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/bus.vhd Line: 15
+Warning (10445): VHDL Subtype or Type Declaration warning at bus.vhd(23): subtype or type has null range File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/bus.vhd Line: 23
+Warning (10296): VHDL warning at bus.vhd(23): ignored assignment of value to null range File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/bus.vhd Line: 23
+Info (12128): Elaborating entity "reg" for hierarchy "reg:program_counter" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 219
+Info (12128): Elaborating entity "switch" for hierarchy "switch:sw_pci" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 221
+Warning (10492): VHDL Process Statement warning at datapath.vhd(20): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 20
+Warning (10631): VHDL Process Statement warning at datapath.vhd(17): inferring latch(es) for signal or variable "y", which holds its previous value in one or more paths through the process File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[0]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[1]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[2]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[3]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[4]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[5]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[6]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[7]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[8]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[9]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[10]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[11]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[12]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[13]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[14]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[15]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (12128): Elaborating entity "mux_2to1" for hierarchy "mux_2to1:bus_inc_mux" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 223
+Warning (10492): VHDL Process Statement warning at muxes.vhd(103): signal "x0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/muxes.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at muxes.vhd(105): signal "x1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/muxes.vhd Line: 105
+Info (12128): Elaborating entity "incrementer" for hierarchy "incrementer:incr" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 225
+Info (12128): Elaborating entity "switch" for hierarchy "switch:buses_rfa3_sw_1" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 233
+Warning (10492): VHDL Process Statement warning at datapath.vhd(20): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 20
+Warning (10631): VHDL Process Statement warning at datapath.vhd(17): inferring latch(es) for signal or variable "y", which holds its previous value in one or more paths through the process File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[0]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (12128): Elaborating entity "mux_2to1" for hierarchy "mux_2to1:buses_rfa3" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 239
+Warning (10492): VHDL Process Statement warning at muxes.vhd(103): signal "x0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/muxes.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at muxes.vhd(105): signal "x1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/muxes.vhd Line: 105
+Info (12128): Elaborating entity "R_block" for hierarchy "R_block:rblock" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 243
+Info (12128): Elaborating entity "I_block" for hierarchy "I_block:iblock" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 245
+Info (12128): Elaborating entity "J_block" for hierarchy "J_block:jblock" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 247
+Info (12128): Elaborating entity "mux_4to1" for hierarchy "mux_4to1:rf_a3_selection_mux1" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 253
+Warning (10492): VHDL Process Statement warning at muxes.vhd(159): signal "x0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/muxes.vhd Line: 159
+Warning (10492): VHDL Process Statement warning at muxes.vhd(161): signal "x1" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/muxes.vhd Line: 161
+Warning (10492): VHDL Process Statement warning at muxes.vhd(163): signal "x2" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/muxes.vhd Line: 163
+Warning (10492): VHDL Process Statement warning at muxes.vhd(165): signal "x3" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/muxes.vhd Line: 165
+Info (12128): Elaborating entity "switch" for hierarchy "switch:sw1_rfa1" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 265
+Warning (10492): VHDL Process Statement warning at datapath.vhd(20): signal "x" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 20
+Warning (10631): VHDL Process Statement warning at datapath.vhd(17): inferring latch(es) for signal or variable "y", which holds its previous value in one or more paths through the process File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[0]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[1]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (10041): Inferred latch for "y[2]" at datapath.vhd(17) File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 17
+Info (12128): Elaborating entity "regfile" for hierarchy "regfile:register_file" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 273
+Info (12128): Elaborating entity "ALU" for hierarchy "ALU:arithmetic_logical_unit" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 288
+Warning (10492): VHDL Process Statement warning at alu.vhd(98): signal "temp_op" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/alu.vhd Line: 98
+Warning (10492): VHDL Process Statement warning at alu.vhd(103): signal "temp_op" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/alu.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at alu.vhd(108): signal "temp_op" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/alu.vhd Line: 108
+Warning (10492): VHDL Process Statement warning at alu.vhd(112): signal "temp_op" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/alu.vhd Line: 112
+Warning (10492): VHDL Process Statement warning at alu.vhd(116): signal "temp_op" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/alu.vhd Line: 116
+Warning (10492): VHDL Process Statement warning at alu.vhd(120): signal "temp_op" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/alu.vhd Line: 120
+Warning (10492): VHDL Process Statement warning at alu.vhd(124): signal "temp_op" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/alu.vhd Line: 124
+Info (12128): Elaborating entity "reg" for hierarchy "reg:carry_reg" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 302
+Info (12128): Elaborating entity "mem" for hierarchy "mem:data_memory" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 324
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "co" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 47
+    Warning (13410): Pin "zo" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 48
+    Warning (13410): Pin "ir_data[0]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+    Warning (13410): Pin "ir_data[1]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+    Warning (13410): Pin "ir_data[2]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+    Warning (13410): Pin "ir_data[3]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+    Warning (13410): Pin "ir_data[4]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+    Warning (13410): Pin "ir_data[5]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+    Warning (13410): Pin "ir_data[6]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+    Warning (13410): Pin "ir_data[7]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+    Warning (13410): Pin "ir_data[8]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+    Warning (13410): Pin "ir_data[9]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+    Warning (13410): Pin "ir_data[10]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+    Warning (13410): Pin "ir_data[11]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+    Warning (13410): Pin "ir_data[12]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+    Warning (13410): Pin "ir_data[13]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+    Warning (13410): Pin "ir_data[14]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+    Warning (13410): Pin "ir_data[15]" is stuck at GND File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 49
+Warning (21074): Design contains 28 input pin(s) that do not drive logic
+    Warning (15610): No output dependent on input pin "clk" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 41
+    Warning (15610): No output dependent on input pin "rst" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 41
+    Warning (15610): No output dependent on input pin "di_en[0]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 42
+    Warning (15610): No output dependent on input pin "di_en[1]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 42
+    Warning (15610): No output dependent on input pin "t1_en[0]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 42
+    Warning (15610): No output dependent on input pin "t1_en[1]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 42
+    Warning (15610): No output dependent on input pin "cz_en[0]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 42
+    Warning (15610): No output dependent on input pin "cz_en[1]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 42
+    Warning (15610): No output dependent on input pin "alu_en[0]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 42
+    Warning (15610): No output dependent on input pin "alu_en[1]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 42
+    Warning (15610): No output dependent on input pin "cb" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 43
+    Warning (15610): No output dependent on input pin "ao_en" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 43
+    Warning (15610): No output dependent on input pin "do_en" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 43
+    Warning (15610): No output dependent on input pin "ir_en[0]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 44
+    Warning (15610): No output dependent on input pin "ir_en[1]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 44
+    Warning (15610): No output dependent on input pin "ir_en[2]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 44
+    Warning (15610): No output dependent on input pin "pc_en[0]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 44
+    Warning (15610): No output dependent on input pin "pc_en[1]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 44
+    Warning (15610): No output dependent on input pin "pc_en[2]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 44
+    Warning (15610): No output dependent on input pin "mux[0]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 45
+    Warning (15610): No output dependent on input pin "mux[1]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 45
+    Warning (15610): No output dependent on input pin "mux[2]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 45
+    Warning (15610): No output dependent on input pin "mux[3]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 45
+    Warning (15610): No output dependent on input pin "rf_en[0]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 46
+    Warning (15610): No output dependent on input pin "rf_en[1]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 46
+    Warning (15610): No output dependent on input pin "rf_en[2]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 46
+    Warning (15610): No output dependent on input pin "rf_en[3]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 46
+    Warning (15610): No output dependent on input pin "rf_en[4]" File: C:/Users/bhavy/Courses/EE 309/Project/309-Project/datapath/datapath.vhd Line: 46
+Info (21057): Implemented 46 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 28 input pins
+    Info (21059): Implemented 18 output pins
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 82 warnings
+    Info: Peak virtual memory: 4765 megabytes
+    Info: Processing ended: Fri Apr 29 21:36:38 2022
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:06
 
 
