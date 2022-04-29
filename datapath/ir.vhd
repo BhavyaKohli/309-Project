@@ -27,8 +27,9 @@ component reg is
 	);
 end component reg;
 signal ir_regout: std_logic_vector(15 downto 0);
+signal zero: std_logic := '0';
 begin
-	r_1: reg generic (16); port map (clk, rst, en, inp, ir_regout);
+	r_1: reg port map (clk, zero, irwrite, inp, ir_regout);
 	opcode <= ir_regout(15 downto 12);
 	imm6 <= ir_regout(5 downto 0);
 	ra <= ir_regout(11 downto 9);

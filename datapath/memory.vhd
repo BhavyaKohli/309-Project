@@ -21,9 +21,9 @@ architecture mem_arch of mem is
 type mem_array is array (0 to 2**mem_width-1) of std_logic_vector (mem_data_width-1 downto 0);
 signal mem_data: mem_array:=(others =>(others=>'0')); 
 begin
-	process(clock)
+	process(clk)
 	begin
-		if(rising_edge(clock)) then
+		if(rising_edge(clk)) then
 			if(write_in='1') then 
 				mem_data(to_integer(unsigned(address))) <= data_in;
 			end if;

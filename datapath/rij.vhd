@@ -41,6 +41,10 @@ begin
 	o <= (not i(3)) and (not i(2)) and (i(1) xor i(0));
 end R_arch;
 
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
 entity I_block is
 	port (
 		i : in std_logic_vector(3 downto 0);
@@ -53,6 +57,10 @@ begin
 	o <= (i(3) and (not i(2)) and (not i(1))) or ((not i(3)) and i(2) and (not i(3))) or ((not i(3)) and i(2) and i(1) and i(0));
 end I_arch;
 
+library ieee;
+use ieee.std_logic_1164.all;
+use ieee.numeric_std.all;
+
 entity J_block is
 	port (
 		i : in std_logic_vector(3 downto 0);
@@ -62,5 +70,5 @@ end J_block;
 
 architecture J_arch of J_block is
 begin
-	o <= (i(3) and i(0)) or (i(3) and i(2) and (not i(1))) or ((not i(3)) and (not i(2)) and (not i(1)) and (not i(0));
+	o <= (i(3) and i(0)) or (i(3) and i(2) and (not i(1))) or ((not i(3)) and (not i(2)) and (not i(1)) and (not i(0)));
 end J_arch;

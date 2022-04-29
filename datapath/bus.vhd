@@ -2,17 +2,17 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity bus is
-	generic ( data_length : integer := 16 )
+entity int_bus is
+	generic ( data_length : integer := 16 );
 	port (
 		clk, rst : in std_logic;
 		din      : in std_logic_vector(data_length-1 downto 0);
 		dout     : out std_logic_vector(15 downto 0)
 	);
-end bus;
+end int_bus;
 
-architecture bus_arch of bus is
-variable pad := std_logic_vector(15-data_length downto 0) := (others => '0');
+architecture bus_arch of int_bus is
+variable pad : std_logic_vector(15-data_length downto 0) := (others => '0');
 begin
 	process (clk, rst)
 	begin
@@ -22,4 +22,5 @@ begin
 			dout(data_length-1 downto 0) <= din;
 			dout(15 downto data_length) <= pad;
 		end if;
+	end process;
 end bus_arch;

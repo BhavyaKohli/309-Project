@@ -1,11 +1,14 @@
-library std
+library std;
 use std.standard.all;
 
-library work
+library work;
 use work.muxes.all;
 
+library work;
+use work.rij.all;
+
 library ieee;
-use ieee.std_logic_1164.all
+use ieee.std_logic_1164.all;
 
 entity Datapath is
     port(
@@ -27,20 +30,19 @@ signal one : std_logic := '1';
 signal zero : std_logic := '0';
 signal zero_3bit : std_logic_vector(2 downto 0) := "000";
 signal dummy_16bit : std_logic_vector(15 downto 0) := (others => '0');
-signal pc_o, pc_i : std_logic; --program counter
-signal inc_o : std_logic; --incrementer
+signal pc_o, pc_i : std_logic_vector(15 downto 0); --program counter
+signal inc_o : std_logic_vector(15 downto 0); --incrementer
 signal rf_a3_i, rf_a2_i, rf_a1_i : std_logic_vector(2 downto 0):= "000"; --register file
 signal rf_d1_o, rf_d2_o, rf_d3_o : std_logic_vector(15 downto 0); --register file
-signal bus_a_o, bus_a_i,: std_logic_vector(15 downto 0); --bus a
-signal bus_b_o, bus_b_i,: std_logic_vector(15 downto 0); --bus b
+signal bus_a_o, bus_a_i: std_logic_vector(15 downto 0); --bus a
+signal bus_b_o, bus_b_i: std_logic_vector(15 downto 0); --bus b
 signal alu_a, alu_b, alu_o, t1_o : std_logic_vector(15 downto 0); --alu
 signal memi_o, ir_o : std_logic_vector(15 downto 0); --instrction register
 signal alu_s1, alu_s0, c_o, z_o, carry_f, zero_f : std_logic; --alu select lines and carry output and flags
 signal rblock_o, iblock_o, jblock_o: std_logic; --rij block
 signal ao_o: std_logic_vector(15 downto 0); --address out
 signal memd_o, di_o: std_logic_vector(15 downto 0); --data in
-signal do_o: std_logic_vector(15 downto 0)-- data out
-signal  
+signal do_o: std_logic_vector(15 downto 0);-- data out
 
 component mem is
 	generic (
@@ -104,11 +106,11 @@ component regfile is
 end component regfile;
 
 component switch is
-	generic( n_bits : integer := 16 );
+	generic( nbits : integer := 16 );
 	port (
 		x : in std_logic_vector(nbits-1 downto 0);
 		s : in std_logic;
-		y : out std_logic
+		y : out std_logic_vector(nbits-1 downto 0)
 	);
 end component switch;
 
@@ -142,14 +144,14 @@ component reg is
 	);
 end component reg;
 
-component bus is
+component int_bus is
 	generic ( data_length : integer := 16 );
 	port (
 		clk, rst : in std_logic;
 		din      : in std_logic_vector(data_length-1 downto 0);
 		dout     : out std_logic_vector(15 downto 0)
 	);
-end component bus;
+end component int_bus;
 
 -- component ir is
 -- 	port (
@@ -180,13 +182,13 @@ begin
 	
 	-- ir
 	instruction_reg :
-		reg port map (clk, rst, ir_en, memi_o, ir_o);
-	instruction_memory :
-		memory port map ();
+		reg port map (clk, rst, ir_en(1), memi_o, ir_o);			-- check ir_en(1)
+	--instruction_memory :
+	--	memory port map ();
 	
 	-- ALU and t1
 	arithmetic_logical_unit : 
-        ALU port map (alu_a, alu_b, sel(1)=>alu_s1, sel(0)=>alu_s0, c_o, alu_o, carry_f, zero_f);
+        ALU port map (alu_a, alu_b, sel(1)=>alu_s1, sel(0)=>alu_s0, alu_c=>c_o, alu_o=>alu_o, c=>carry_f, z=>zero_f);
 	bus_a_alu :
 		switch port map (bus_a_o, alu_en(0), alu_a);
 	bus_b_alu :
@@ -200,7 +202,7 @@ begin
 
 	--CZ
 	carry_zero_reg :
-		reg generic (2); port map (clk, rst, cz_en, din(1)=>carry_f, din(0)=>zero_f, dout(1)=>c_o, dout(0)=>z_o);
+		reg generic map (2) port map (clk, rst, cz_en(1), din(1)=>carry_f, din(0)=>zero_f, dout(1)=>c_o, dout(0)=>z_o); -- check cz_en(1)
 	
 	--RF
 	 rblock :
@@ -210,11 +212,11 @@ begin
 	 jblock :
 		J_block port map (ir_o(15 downto 11), jblock_o);
 	 rf_a1_selection_mux1 :
-	 	mux_2to1 generic (3); port map (zero_3bit,ir_o(11 downto 9), jblock_o, rf_a1_i);
+	 	mux_2to1 generic map (3) port map (zero_3bit,ir_o(11 downto 9), jblock_o, rf_a1_i);
 	 rf_a2_selection_mux2 :
-		mux_2to1 generic (3); port map (ir_o(8 downto 6),zero_3bit, jblock_o, rf_a2_i);
+		mux_2to1 generic map (3) port map (ir_o(8 downto 6),zero_3bit, jblock_o, rf_a2_i);
 	 rf_a3_selection_mux2 :
-		mux_4to1 generic (3); port map (zero_3bit,ir_o(11 downto 9), ir_o(8 downto 6),ir_o(5 downto 3), s(0)=>jblock_o,s(1)=>iblock_o, rf_a3_i);
+		mux_4to1 generic map (3) port map (zero_3bit,ir_o(11 downto 9), ir_o(8 downto 6),ir_o(5 downto 3), s(0)=>jblock_o,s(1)=>iblock_o, y=>rf_a3_i);
 
 	 register_file :
 		regfile port map (rf_a1_i, rf_a2_i, rf_a3_i, rf_d1_o, rf_d2_o, rf_d3_o,rf_en(3),clk,rst);
@@ -249,6 +251,11 @@ begin
 	--instruction memory
 	instruction_memory:
 		mem port map (pc_o, dummy_16bit, zero, clk, memi_o);
-
+	
+	--buses
+	bus_a:
+		int_bus port map (clk, rst, bus_a_i, bus_a_o);
+	bus_b:
+		int_bus port map (clk, rst, bus_b_i, bus_b_o);
 
 end datapath_arch;
